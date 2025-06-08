@@ -1,0 +1,39 @@
+version: "3.8"
+services:
+  api-gateway:
+    build: ./api-gateway
+    ports:
+      - "4000:4000"
+    environment:
+      - USER_SERVICE_ADDR=user-service:50051
+    depends_on:
+      - user-service
+  user-service:
+    build: ./user-service
+    ports:
+      - "50051:50051"
+    environment:
+      - RABBITMQ_URL=amqp://rabbitmq
+      - MONGO_URL=mongodb://mongo:27017/users
+    depends_on:
+      - rabbitmq
+      - mongo
+  notification-service:
+    build: ./notification-service
+    depends_on:
+      - rabbitmq
+    environment:
+      - RABBITMQ_URL=amqp://rabbitmq
+  rabbitmq:
+    image: rabbitmq:3-management
+    ports:
+      - "5672:5672"
+      - "15672:15672"
+  mongo:
+    image: mongo:6
+    ports:
+      - "27017:27017"
+    volumes:
+      - mongo-data:/data/db
+volumes:
+  mongo-data:

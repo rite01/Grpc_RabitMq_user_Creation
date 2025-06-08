@@ -1,0 +1,41 @@
+# Node.js
+node_modules/
+dist/
+build/
+.env
+.env.*
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+
+# TypeScript
+*.tsbuildinfo
+
+# Docker
+*.local
+
+# macOS
+.DS_Store
+
+# VSCode
+.vscode/
+
+# Logs
+logs/
+*.log
+
+# Misc
+*.swp
+*.swo
+
+# Ignore coverage reports
+coverage/
+
+# Ignore by service folders
+api-gateway/node_modules/
+user-service/node_modules/
+notification-service/node_modules/
+api-gateway/dist/
+user-service/dist/
+notification-service/dist/
