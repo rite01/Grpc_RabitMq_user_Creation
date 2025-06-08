@@ -1,4 +1,4 @@
 import { app } from "./app.js";
 
-const PORT = process.env.PORT || 4000;
+const PORT = 4009;
 app.listen(PORT, () => console.log(`[API Gateway] running on port ${PORT}`));

@@ -8,7 +8,7 @@ import grpc from "@grpc/grpc-js";
 
 const RABBITMQ_URL = process.env.RABBITMQ_URL || "amqp://localhost";
 const QUEUE_NAME = "user_created";
-const PORT = process.env.PORT_USER || 50051;
+const PORT = 50051;
 
 await connectDB();
 await connectRabbitMQ(RABBITMQ_URL, QUEUE_NAME);
