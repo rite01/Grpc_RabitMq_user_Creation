@@ -8,6 +8,7 @@ import grpc from "@grpc/grpc-js";
 
 const RABBITMQ_URL = process.env.RABBITMQ_URL || "amqp://localhost";
 const QUEUE_NAME = "user_created";
+const PORT = process.env.PORT_USER || 50051;
 
 await connectDB();
 await connectRabbitMQ(RABBITMQ_URL, QUEUE_NAME);
@@ -15,9 +16,9 @@ await connectRabbitMQ(RABBITMQ_URL, QUEUE_NAME);
 const server = createGrpcServer();
 
 server.bindAsync(
-  "0.0.0.0:50051",
+  `0.0.0.0:${PORT}`,
   grpc.ServerCredentials.createInsecure(),
   () => {
-    console.log("[UserService] User Service running on port 50051");
+    console.log(`[UserService] User Service running on port ${PORT}`);
   }
 );
