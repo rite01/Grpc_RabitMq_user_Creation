@@ -1,3 +1,11 @@
+/**
+ * RabbitMQ utility functions for the User Service.
+ *
+ * - Connects to RabbitMQ and asserts a queue
+ * - Sends messages to a specified queue
+ * - Closes the RabbitMQ channel when needed
+ */
+
 import amqp, { Channel } from "amqplib";
 
 let channel: Channel | null = null;

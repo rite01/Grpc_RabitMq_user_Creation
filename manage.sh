@@ -1,6 +1,3 @@
-#!/bin/bash
-# manage.sh - Install dependencies and manage all microservices
-
 set -e
 
 COMMAND=$1

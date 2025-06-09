@@ -1,3 +1,12 @@
+/**
+ * Express application setup for the API Gateway.
+ *
+ * - Loads environment variables
+ * - Sets up JSON body parsing
+ * - Mounts REST routes and GraphQL endpoint
+ * - Exports the configured Express app
+ */
+
 import express from "express";
 import { graphqlHTTP } from "express-graphql";
 import { schema, root } from "./graphql.js";

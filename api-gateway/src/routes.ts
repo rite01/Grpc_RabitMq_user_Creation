@@ -1,3 +1,11 @@
+/**
+ * Express router for user-related REST endpoints.
+ *
+ * - Validates incoming user data
+ * - Forwards user creation requests to the user-service via gRPC
+ * - Handles error responses and validation feedback
+ */
+
 import express, { Request, Response } from "express";
 import { userServiceClient } from "./grpc-client.js";
 import { userSchema } from "./validation.js";

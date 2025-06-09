@@ -1,3 +1,11 @@
+/**
+ * Mongoose model and TypeScript interface for User documents.
+ *
+ * - Defines the IUser interface for type safety
+ * - Sets up the user schema with required fields
+ * - Exports the UserModel for database operations
+ */
+
 import mongoose, { Document, Model } from "mongoose";
 
 export interface IUser extends Document {

@@ -1,3 +1,11 @@
+/**
+ * gRPC client setup for communicating with the user-service.
+ *
+ * - Loads the user.proto definition
+ * - Creates a gRPC client for the UserService
+ * - Uses USER_SERVICE_ADDR environment variable for service address
+ */
+
 import grpc from "@grpc/grpc-js";
 import protoLoader from "@grpc/proto-loader";
 import path from "path";

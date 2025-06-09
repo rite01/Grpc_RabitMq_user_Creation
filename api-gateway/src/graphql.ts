@@ -1,3 +1,11 @@
+/**
+ * GraphQL schema and resolvers for user operations.
+ *
+ * - Exposes: getUser, createUser
+ * - Communicates with the user-service via gRPC
+ * - Used by the API Gateway to provide a GraphQL endpoint for user management
+ */
+
 import { buildSchema } from "graphql";
 import { userServiceClient } from "./grpc-client.js";
 import { userSchema } from "./validation.js";

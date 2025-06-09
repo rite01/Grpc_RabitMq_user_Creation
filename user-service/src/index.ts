@@ -1,3 +1,11 @@
+/**
+ * Entry point for the User Service.
+ *
+ * - Loads environment variables
+ * - Connects to MongoDB and RabbitMQ
+ * - Starts the gRPC server on the specified port
+ */
+
 import dotenv from "dotenv";
 dotenv.config();
 

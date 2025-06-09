@@ -1,3 +1,11 @@
+/**
+ * MongoDB connection utility for the User Service.
+ *
+ * - Connects to MongoDB using Mongoose
+ * - Ensures a single connection instance
+ * - Logs connection status and errors
+ */
+
 import mongoose from "mongoose";
 
 let conn: any = null;

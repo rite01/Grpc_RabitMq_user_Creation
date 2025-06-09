@@ -1,3 +1,11 @@
+/**
+ * Notification Service entry point.
+ *
+ * - Connects to RabbitMQ and listens for 'user_created' events
+ * - Logs notifications for new users
+ * - Acknowledges messages after processing
+ */
+
 import amqp from "amqplib";
 
 const RABBITMQ_URL = process.env.RABBITMQ_URL || "amqp://localhost";

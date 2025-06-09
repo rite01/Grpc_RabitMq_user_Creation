@@ -1,3 +1,11 @@
+/**
+ * gRPC server setup and user CRUD operations for the User Service.
+ *
+ * - Loads user.proto and registers UserService methods
+ * - Handles Create, Read, Update, Delete user operations
+ * - Publishes user creation events to RabbitMQ
+ */
+
 import grpc from "@grpc/grpc-js";
 import protoLoader from "@grpc/proto-loader";
 import path from "path";
